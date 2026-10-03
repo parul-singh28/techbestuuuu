@@ -38,7 +38,7 @@ export default function FlagshipProjectView() {
     <div className="space-y-6">
       
       {/* 1. Flagship Project Banner */}
-      <div className="theme-panel rounded-2xl p-6 sm:p-7 border-sky-500/30 space-y-4">
+      <div className="hostinger-card p-6 sm:p-7 border-[#673de6]/30 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-500 shadow-sm">
@@ -82,12 +82,12 @@ export default function FlagshipProjectView() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Frontend Scope */}
-        <div className="theme-panel rounded-2xl p-5 sm:p-6 space-y-4">
+        <div className="hostinger-card p-5 sm:p-6 space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
             <h3 className="text-base font-bold text-[var(--text-primary)] m-0">
               Frontend Scope
             </h3>
-            <span className="text-xs font-mono text-sky-500 font-bold">
+            <span className="text-xs font-mono text-[#8c52ff] font-bold">
               {frontendDone}/{FLAGSHIP_PROJECT.frontendScope.length} Complete
             </span>
           </div>
@@ -101,11 +101,11 @@ export default function FlagshipProjectView() {
                   onClick={() => toggleTask(task)}
                   className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
                     isChecked
-                      ? 'bg-sky-500/10 border-sky-500/30 text-[var(--text-primary)] font-semibold'
-                      : 'bg-[var(--bg-surface-elevated)] border-[var(--border-color)] text-[var(--text-secondary)] hover:border-sky-500/40'
+                      ? 'bg-[#673de6]/10 border-[#673de6]/30 text-[var(--text-primary)] font-semibold'
+                      : 'bg-[var(--bg-surface-elevated)] border-[var(--border-color)] text-[var(--text-secondary)] hover:border-[#673de6]/40'
                   }`}
                 >
-                  <button className="text-sky-500">
+                  <button className="text-[#673de6]">
                     {isChecked ? <CheckSquare className="w-4 h-4" /> : <Square className="w-4 h-4 text-[var(--text-muted)]" />}
                   </button>
                   <span className={`text-xs font-mono ${isChecked ? '' : ''}`}>{task}</span>
@@ -116,7 +116,7 @@ export default function FlagshipProjectView() {
         </div>
 
         {/* Engineering Scope */}
-        <div className="theme-panel rounded-2xl p-5 sm:p-6 space-y-4">
+        <div className="hostinger-card p-5 sm:p-6 space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
             <h3 className="text-base font-bold text-[var(--text-primary)] m-0">
               Engineering Scope
@@ -152,7 +152,7 @@ export default function FlagshipProjectView() {
       </div>
 
       {/* 3. Supporting Projects (Interview Case Studies) */}
-      <div className="theme-panel rounded-2xl p-6 sm:p-7 space-y-4">
+      <div className="hostinger-card p-6 sm:p-7 space-y-4">
         <h3 className="text-lg font-bold text-[var(--text-primary)] m-0">
           Supporting Project Stories (Interview Proof)
         </h3>

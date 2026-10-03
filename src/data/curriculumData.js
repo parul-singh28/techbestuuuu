@@ -699,13 +699,13 @@ export const SOURCE_LIBRARY = [
   { name: "Neso Academy", url: "https://www.youtube.com/@nesoacademy", desc: "CS fundamentals: OS, DBMS, Computer Networks." }
 ];
 
-// Initial state builder for all 90 days
+// Initial state builder for all 90 days (Winter arc starts Day 1 on Oct 02, Day 2 on Oct 03)
 export function build90DaysInitialState() {
   const days = {};
   
   SCHEDULE_DAYS.forEach((item) => {
-    const isPast = item.day < 14;
-    const isToday = item.day === 14;
+    // Day 1 has some initial check-offs to demonstrate tracking, Day 2+ ready for live execution
+    const isDay1 = item.day === 1;
 
     days[item.day] = {
       day: item.day,
@@ -713,22 +713,22 @@ export function build90DaysInitialState() {
       dateIso: item.dateIso,
       type: item.type,
       phase: item.phase,
-      // Status: 'green', 'yellow', 'red'
-      status: isPast ? 'green' : (isToday ? 'green' : 'pending'),
+      // Status: 'green', 'yellow', 'red', 'pending'
+      status: isDay1 ? 'green' : (item.day === 2 ? 'green' : 'pending'),
       examOverrideActive: false,
-      proofText: isPast ? "Pushed to GitHub & logged takeaway in notes" : "",
-      timeSpent: isPast ? "75 mins" : "",
+      proofText: isDay1 ? "Contains Duplicate solved in C++ (O(N) unordered_set) & pushed to GitHub" : "",
+      timeSpent: isDay1 ? "60 mins" : "",
       // Core Checklist from PDF
-      dsaCompleted: isPast,
-      skillCompleted: isPast,
-      careerCompleted: isPast,
+      dsaCompleted: isDay1,
+      skillCompleted: isDay1,
+      careerCompleted: false, // Ready for user to check!
       // Glow-up / Skincare Checklist
-      hydrationCompleted: isPast || isToday,
-      amSkincareCompleted: isPast || isToday,
-      pmSkincareCompleted: isPast,
-      workoutCompleted: isPast,
-      sleepBefore1030: isPast,
-      notes: isPast ? `Day ${item.day} takeaways logged. C++ solution optimized.` : ""
+      hydrationCompleted: isDay1,
+      amSkincareCompleted: isDay1,
+      pmSkincareCompleted: isDay1,
+      workoutCompleted: isDay1,
+      sleepBefore1030: isDay1,
+      notes: isDay1 ? "Day 1 kickoff successful! Hashing pattern locked in. Commute learning block utilized." : ""
     };
   });
 

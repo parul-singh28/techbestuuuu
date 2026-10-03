@@ -2,27 +2,37 @@
 
 @layer base {
   :root {
-    --bg-main: #f0f7ff;
+    /* Hostinger Light Mode Palette */
+    --bg-main: #f8f6fe;
     --bg-surface: #ffffff;
-    --bg-surface-elevated: #f8fbff;
-    --border-color: #d6e6f7;
-    --text-primary: #0a192f;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --accent-blue: #0284c7;
-    --accent-glow: rgba(2, 132, 199, 0.15);
+    --bg-surface-elevated: #f2edfe;
+    --border-color: #e4dafc;
+    --text-primary: #190e38;
+    --text-secondary: #584a7a;
+    --text-muted: #8b7ca6;
+    --brand-purple: #673de6;
+    --brand-purple-hover: #5025d1;
+    --brand-gradient: linear-gradient(135deg, #673de6 0%, #8c52ff 100%);
+    --brand-glow: rgba(103, 61, 230, 0.2);
+    --accent-mint: #00b074;
+    --accent-cyan: #00c8e0;
   }
 
   .dark {
-    --bg-main: #0a192f;
-    --bg-surface: #0f2240;
-    --bg-surface-elevated: #162c52;
-    --border-color: #1e3a5f;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-blue: #38bdf8;
-    --accent-glow: rgba(56, 189, 248, 0.15);
+    /* Hostinger Signature Dark Violet/Navy Palette */
+    --bg-main: #0c071e;
+    --bg-surface: #140d30;
+    --bg-surface-elevated: #1c1342;
+    --border-color: #2e2063;
+    --text-primary: #fbfaff;
+    --text-secondary: #b1a6d2;
+    --text-muted: #7d719f;
+    --brand-purple: #673de6;
+    --brand-purple-hover: #7b4bfb;
+    --brand-gradient: linear-gradient(135deg, #673de6 0%, #9960ff 100%);
+    --brand-glow: rgba(103, 61, 230, 0.35);
+    --accent-mint: #00e599;
+    --accent-cyan: #00f0ff;
   }
 
   body {
@@ -30,52 +40,87 @@
     color: var(--text-primary);
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    overflow-x: hidden;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Hostinger Purple */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--bg-main);
 }
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #372675;
   border-radius: 9999px;
 }
-.dark ::-webkit-scrollbar-thumb {
-  background: #1e3a5f;
-}
 ::-webkit-scrollbar-thumb:hover {
-  background: #38bdf8;
+  background: #673de6;
 }
 
-/* Glass Panels */
-.theme-panel {
+/* Hostinger-Style Card & Glass Panels */
+.hostinger-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
+  border-radius: 1rem;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px -2px rgba(12, 7, 30, 0.08);
 }
 
-.theme-panel-hover:hover {
-  border-color: var(--accent-blue);
+.hostinger-card:hover {
+  border-color: rgba(103, 61, 230, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(10, 25, 47, 0.1), 0 0 20px -2px var(--accent-glow);
+  box-shadow: 0 12px 30px -5px rgba(103, 61, 230, 0.22);
 }
 
-.dark .theme-panel-hover:hover {
-  box-shadow: 0 10px 25px -5px rgba(2, 6, 23, 0.6), 0 0 20px -2px var(--accent-glow);
+.dark .hostinger-card {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
 }
 
-/* Animation utilities */
-@keyframes pulseSubtle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+.dark .hostinger-card:hover {
+  border-color: rgba(140, 82, 255, 0.6);
+  box-shadow: 0 12px 30px -5px rgba(103, 61, 230, 0.35), 0 0 15px -2px rgba(103, 61, 230, 0.2);
 }
 
-.animate-subtle {
-  animation: pulseSubtle 3s infinite ease-in-out;
+/* Hostinger Gradient CTA Button */
+.btn-hostinger {
+  background: linear-gradient(135deg, #673de6 0%, #8c52ff 100%);
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(103, 61, 230, 0.39);
+}
+
+.btn-hostinger:hover {
+  background: linear-gradient(135deg, #572bd7 0%, #7b3fe4 100%);
+  box-shadow: 0 6px 20px rgba(103, 61, 230, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-hostinger:active {
+  transform: translateY(0);
+}
+
+/* Hostinger Glow effects */
+.glow-purple {
+  box-shadow: 0 0 35px -5px rgba(103, 61, 230, 0.35);
+}
+
+.glow-mint {
+  box-shadow: 0 0 25px -4px rgba(0, 229, 153, 0.3);
+}
+
+.badge-mint {
+  background: rgba(0, 229, 153, 0.12);
+  color: var(--accent-mint);
+  border: 1px solid rgba(0, 229, 153, 0.3);
+}
+
+.badge-purple {
+  background: rgba(103, 61, 230, 0.12);
+  color: #8c52ff;
+  border: 1px solid rgba(103, 61, 230, 0.3);
 }

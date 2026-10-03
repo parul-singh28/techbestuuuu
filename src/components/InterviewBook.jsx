@@ -102,8 +102,7 @@ export default function InterviewBook() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="theme-panel rounded-2xl p-6 border-sky-500/20 shadow-sm space-y-2">
+      <div className="hostinger-card p-6 space-y-2">
         <div className="flex items-center gap-2.5">
           <BookOpen className="w-5 h-5 text-sky-500" />
           <h2 className="text-xl font-bold text-[var(--text-primary)] m-0">
@@ -119,9 +118,9 @@ export default function InterviewBook() {
       </div>
 
       {/* Add New Entry Form */}
-      <div className="theme-panel rounded-2xl p-5 space-y-4">
+      <div className="hostinger-card p-5 space-y-4">
         <h3 className="text-sm font-bold text-[var(--text-primary)] m-0 flex items-center gap-2">
-          <Plus className="w-4 h-4 text-sky-500" />
+          <Plus className="w-4 h-4 text-[#8c52ff]" />
           Log a Weak Problem / Concept Takeaway
         </h3>
 
@@ -131,7 +130,7 @@ export default function InterviewBook() {
             placeholder="Problem / Concept (e.g. 3Sum, LRU Cache)"
             value={newProblem}
             onChange={(e) => setNewProblem(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-sky-500"
+            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-[#673de6]"
             required
           />
           <input
@@ -139,32 +138,32 @@ export default function InterviewBook() {
             placeholder="My first approach"
             value={newFirstApproach}
             onChange={(e) => setNewFirstApproach(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-sky-500"
+            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-[#673de6]"
           />
           <input
             type="text"
             placeholder="Why it failed / was weak"
             value={newWhyFailed}
             onChange={(e) => setNewWhyFailed(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-sky-500"
+            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-[#673de6]"
           />
           <input
             type="text"
             placeholder="Correct pattern (e.g. Two Pointers, Monotonic Stack)"
             value={newCorrectPattern}
             onChange={(e) => setNewCorrectPattern(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-sky-500"
+            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-[#673de6]"
           />
           <input
             type="text"
             placeholder="Complexity (e.g. O(N) time, O(1) space)"
             value={newComplexity}
             onChange={(e) => setNewComplexity(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-sky-500"
+            className="px-3 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] focus:outline-none focus:border-[#673de6]"
           />
           <button
             type="submit"
-            className="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-mono text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+            className="px-4 py-2 rounded-xl btn-hostinger font-mono text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
           >
             <Plus className="w-3.5 h-3.5" />
             Add to Interview Book
@@ -173,7 +172,7 @@ export default function InterviewBook() {
       </div>
 
       {/* Table of Entries */}
-      <div className="theme-panel rounded-2xl overflow-hidden border-[var(--border-color)]">
+      <div className="hostinger-card overflow-hidden border-[var(--border-color)]">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs font-mono">
             <thead className="bg-[var(--bg-surface-elevated)] border-b border-[var(--border-color)] text-[var(--text-muted)] uppercase text-[10px]">

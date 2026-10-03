@@ -32,7 +32,7 @@ export default function ScorecardView() {
     <div className="space-y-6">
       
       {/* 1. 90-Day Scorecard Table */}
-      <div className="theme-panel rounded-2xl p-6 sm:p-7 space-y-4">
+      <div className="hostinger-card p-6 sm:p-7 space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
           <div className="flex items-center gap-2.5">
             <Award className="w-5 h-5 text-sky-500" />
@@ -83,7 +83,7 @@ export default function ScorecardView() {
       </div>
 
       {/* 2. Source Library (Pages 43-44) */}
-      <div className="theme-panel rounded-2xl p-6 sm:p-7 space-y-4">
+      <div className="hostinger-card p-6 sm:p-7 space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
           <div className="flex items-center gap-2.5">
             <Bookmark className="w-5 h-5 text-emerald-500" />

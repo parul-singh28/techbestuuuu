@@ -100,7 +100,7 @@ export default function LeetCodeProgressMatrix({ isDarkMode }) {
   };
 
   return (
-    <div className="theme-panel rounded-2xl p-5 sm:p-6 space-y-5 relative overflow-hidden transition-all duration-300">
+    <div className="hostinger-card p-5 sm:p-6 space-y-5 relative overflow-hidden">
       
       {/* Header & Target Link */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[var(--border-color)]">

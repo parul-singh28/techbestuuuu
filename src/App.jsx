@@ -45,18 +45,27 @@ export default function App() {
     localStorage.setItem(STORAGE_KEYS.ACTIVE_TAB, activeTab);
   }, [activeTab]);
 
-  // 3. Current Day and Selected Day
-  const [currentDayNum] = useState(14); // Realistic ongoing Day 14 (Thu, 15 Oct)
+  // 3. Brand / App Name State (with instant switcher)
+  const [appName, setAppName] = useState(() => {
+    return localStorage.getItem('techbestuuuu_app_name') || 'ArcForge.dev';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('techbestuuuu_app_name', appName);
+  }, [appName]);
+
+  // 4. Current Day and Selected Day (Winter arc started Oct 02 = Day 1, Oct 03 = Day 2)
+  const [currentDayNum] = useState(2); 
   const [selectedDayNum, setSelectedDayNum] = useState(() => {
     const saved = localStorage.getItem(STORAGE_KEYS.SELECTED_DAY);
-    return saved ? parseInt(saved, 10) : 14;
+    return saved ? parseInt(saved, 10) : 2;
   });
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.SELECTED_DAY, selectedDayNum.toString());
   }, [selectedDayNum]);
 
-  // 4. Curriculum Days State
+  // 5. Curriculum Days State
   const [daysData, setDaysData] = useState(() => {
     const saved = localStorage.getItem(STORAGE_KEYS.DAYS_CURRICULUM);
     if (saved) {
@@ -83,10 +92,10 @@ export default function App() {
 
   // Reset to Factory Default
   const handleResetData = () => {
-    if (window.confirm('Reset your 90-day roadmap state to default? All verified tasks from the PDF will be reloaded.')) {
+    if (window.confirm('Reset your 90-day roadmap state to default Day 1 fresh start?')) {
       const initial = build90DaysInitialState();
       setDaysData(initial);
-      setSelectedDayNum(14);
+      setSelectedDayNum(2);
       localStorage.setItem(STORAGE_KEYS.DAYS_CURRICULUM, JSON.stringify(initial));
     }
   };
@@ -94,13 +103,15 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)] transition-colors duration-300 flex flex-col font-sans">
       
-      {/* 1. Top Global Navigation Header */}
+      {/* 1. Top Global Navigation Header with Hostinger Vibe */}
       <Header
         isDarkMode={isDarkMode}
         onToggleTheme={() => setIsDarkMode(!isDarkMode)}
         currentDayNum={currentDayNum}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
+        appName={appName}
+        setAppName={setAppName}
         onResetData={handleResetData}
       />
 
@@ -218,15 +229,15 @@ export default function App() {
 
       </main>
 
-      {/* Footer */}
+      {/* Footer with Hostinger Style */}
       <footer className="border-t border-[var(--border-color)] bg-[var(--bg-surface)] py-6 text-center text-xs font-mono text-[var(--text-muted)] mt-12 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-[var(--text-primary)]">{WINTER_ARC_CONFIG.name}</span>
+            <span className="font-black text-[#8c52ff] text-sm">{appName}</span>
             <span>•</span>
-            <span>90-Day Winter Arc Challenge</span>
+            <span className="font-semibold text-[var(--text-primary)]">{WINTER_ARC_CONFIG.name}</span>
             <span>•</span>
-            <span className="text-sky-500">{WINTER_ARC_CONFIG.tagline}</span>
+            <span className="text-[#00e599] font-bold">Winter Arc Protocol</span>
           </div>
 
           <div className="flex items-center gap-3">

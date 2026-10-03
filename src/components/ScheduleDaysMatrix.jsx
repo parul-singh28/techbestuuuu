@@ -21,7 +21,7 @@ export default function ScheduleDaysMatrix({
     <div className="space-y-6">
       
       {/* Header & Filter Controls */}
-      <div className="theme-panel rounded-2xl p-6 sm:p-7 space-y-4">
+      <div className="hostinger-card p-6 sm:p-7 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="text-xl font-bold text-[var(--text-primary)] m-0">
@@ -32,7 +32,7 @@ export default function ScheduleDaysMatrix({
             </p>
           </div>
 
-          <span className="text-xs font-mono text-sky-500 font-bold">
+          <span className="text-xs font-mono text-[#00e599] font-bold">
             Showing {filteredDays.length} / 90 Days
           </span>
         </div>
@@ -43,7 +43,7 @@ export default function ScheduleDaysMatrix({
             onClick={() => setSelectedPhase('all')}
             className={`px-3 py-1.5 rounded-xl text-xs font-mono whitespace-nowrap transition-colors ${
               selectedPhase === 'all'
-                ? 'bg-sky-500 text-white font-bold'
+                ? 'btn-hostinger text-white'
                 : 'bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
@@ -55,7 +55,7 @@ export default function ScheduleDaysMatrix({
               onClick={() => setSelectedPhase(p.title)}
               className={`px-3 py-1.5 rounded-xl text-xs font-mono whitespace-nowrap transition-colors ${
                 selectedPhase === p.title
-                  ? 'bg-sky-500 text-white font-bold'
+                  ? 'btn-hostinger text-white'
                   : 'bg-[var(--bg-surface-elevated)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >

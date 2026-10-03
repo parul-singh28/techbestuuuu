@@ -7,7 +7,7 @@ export default function ScheduleRulesView() {
     <div className="space-y-6">
       
       {/* 1. Non-Negotiables & Rules of Arc */}
-      <div className="theme-panel rounded-2xl p-6 sm:p-7 border-sky-500/20 space-y-4">
+      <div className="hostinger-card p-6 sm:p-7 space-y-4">
         <div className="flex items-center gap-2.5">
           <ShieldCheck className="w-5 h-5 text-sky-500" />
           <h2 className="text-xl font-bold text-[var(--text-primary)] m-0">
@@ -78,7 +78,7 @@ export default function ScheduleRulesView() {
       </div>
 
       {/* 3. Actual Weekday Timetable */}
-      <div className="theme-panel rounded-2xl p-6 sm:p-7 space-y-4">
+      <div className="hostinger-card p-6 sm:p-7 space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-sky-500" />
@@ -117,7 +117,7 @@ export default function ScheduleRulesView() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Saturday Build Day */}
-        <div className="theme-panel rounded-2xl p-6 space-y-4">
+        <div className="hostinger-card p-6 space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
             <div className="flex items-center gap-2">
               <Sun className="w-5 h-5 text-amber-500" />
@@ -141,7 +141,7 @@ export default function ScheduleRulesView() {
         </div>
 
         {/* Sunday Reset & Career Day */}
-        <div className="theme-panel rounded-2xl p-6 space-y-4">
+        <div className="hostinger-card p-6 space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
             <div className="flex items-center gap-2">
               <Compass className="w-5 h-5 text-indigo-500" />
